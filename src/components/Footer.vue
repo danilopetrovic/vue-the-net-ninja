@@ -1,17 +1,25 @@
 <template>
     <header>
-        <p>{{copyright}} &copy;</p>
+        <p>{{prosledi_title}}</p>
     </header>
 </template>
 <script>
+    import {bus} from "../main";
+
     export default {
-        components: {},
+        props: ['prosledi_title'],
         data() {
             return {
-                copyright: 'Ovo je neki CopyRight'
+
             }
         },
-        methods: {}
+        components: {},
+        methods: {},
+        created() {
+            bus.$on('titleChanged', (data)=> {
+                this.prosledi_title = data; /*ovo uzme vrednost iz event busa i ubaci u props koji je poslat iz app.vue*/
+            })
+        }
     };
 </script>
 <style scoped>

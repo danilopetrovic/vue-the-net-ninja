@@ -1,29 +1,31 @@
 <template>
     <div id="ninjas">
         <ul>
-            <li v-for="ninja in ninjas" v-on:click="ninja.show = !ninja.show">
+            <li v-for="ninja in ninjas_prosledjen" v-on:click="ninja.show = !ninja.show">
                 <h2>{{ninja.name}}</h2>
                 <h3 v-show="ninja.show">{{ninja.speciality}}</h3>
             </li>
         </ul>
+        <button v-on:click="deleteNinja">Delete last ninja pop()</button>
     </div>
 </template>
 <script>
     export default {
-        components: {},
-        data() {
-            return {
-                ninjas: [
-                    {name: 'Ryu', speciality: 'Vue Components', show: false},
-                    {name: 'Crystal', speciality: 'HTML Wizardy', show: false},
-                    {name: 'hitoshi', speciality: 'Click Events', show: false},
-                    {name: 'Tango', speciality: 'Conditionals', show: false},
-                    {name: 'Kami', speciality: 'Webpack', show: false},
-                    {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-                ]
+        // props: ['ninjas_prosledjen'],
+        props: {
+            ninjas_prosledjen: {
+                type: Array,
+                required: true
             }
         },
-        methods: {}
+        components: {},
+        data() {
+        },
+        methods: {
+            deleteNinja() {
+                this.ninjas_prosledjen.pop();
+            }
+        }
     };
 </script>
 <style scoped>
