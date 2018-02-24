@@ -1,22 +1,12 @@
 <template>
     <header>
-        <p>{{copyright}} &copy; ||| {{prosledi_title}}</p>
+        <p>{{prosledi_title}}</p>
     </header>
 </template>
 <script>
     export default {
-        props: {
-            prosledi_title: {
-                type: String,
-                required: true
-            }
-        },
+        props: ['prosledi_title'],
         components: {},
-        data() {
-            return {
-                copyright: 'Ovo je neki CopyRight'
-            }
-        },
         methods: {}
     };
 </script>
