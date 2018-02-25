@@ -5,5 +5,5 @@ import singleBlog from './components/singleBlog'
 export default [
     {path: '/', component: showBlogs},
     {path: '/add', component: addBlog},
-    {path: '/blog:id', component: singleBlog},
+    {path: '/blog/:id', component: singleBlog},
 ]

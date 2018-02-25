@@ -6,6 +6,8 @@
 </template>
 
 <script>
+    import searchMixin from '../mixins/searchMixin';
+
     export default {
         data() {
             return {
@@ -24,6 +26,9 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    #single-blog {
+        max-width: 960px;
+        margin: 0 auto;
+    }
 </style>
