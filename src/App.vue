@@ -1,32 +1,33 @@
 <template>
     <div>
-        <keep-alive>
-            <component v-bind:is="component"></component>
-        </keep-alive>
-        <button v-on:click="component = 'form-one'">Show form one</button>
-        <button v-on:click="component = 'form-two'">Show form two</button>
+        <app-header></app-header>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
 // Imports
-import formOne from './components/formOne.vue';
-import formTwo from './components/formTwo.vue';
+import addBlog from './components/addBlog';
+import header from './components/header';
+import showBlogs from './components/showBlogs.vue';
+import listBlogs from './components/listBlogs.vue';
+import singleBlog from './components/singleBlog';
 
 export default {
     components: {
-        'form-one': formOne,
-        'form-two': formTwo
+        'add-blog': showBlogs,
+        'show-blogs': showBlogs,
+        'list-blogs': listBlogs,
+        'app-header': header,
+        'single-blog': singleBlog
     },
     data () {
         return {
-            component: 'form-one'
+
         }
     },
     methods: {
-        handleSubmit: function(){
-            alert('thanks for submitting');
-        }
+
     }
 }
 </script>
